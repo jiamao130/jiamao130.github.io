@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>failed to obtain a cell from its dataSource崩溃 | Hexo</title>
+  <title>ARC dealloc | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在开发过程中，遇到failed to obtain a cell from its dataSource 崩溃，解决思路是首先查看 cellForRowAtIndexPath 中是否有cell为nil的情况，一般情况下都是由此发生的">
+  <meta name="description" content="在ARC下保留dealloc的原因dealloc 方法中 我们不再被允许调用 [release] 了， 也不允许调用 [super dealloc]。 
+唯一一个留着 dealloc 方法的原因就是， 你需要释放一些不在 ARC 控制下的资源。 例如 Core     Foundation 对象中调用 CFRelease()， 对那些通过 malloc() 分配的内存调用 free(), 注销通">
 <meta property="og:type" content="article">
-<meta property="og:title" content="failed to obtain a cell from its dataSource崩溃">
-<meta property="og:url" content="http://yoursite.com/2016/03/10/failed-to-obtain-a-cell-from-its-dataSource崩溃/index.html">
+<meta property="og:title" content="ARC dealloc">
+<meta property="og:url" content="http://yoursite.com/2016/03/10/ARC-dealloc/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="在开发过程中，遇到failed to obtain a cell from its dataSource 崩溃，解决思路是首先查看 cellForRowAtIndexPath 中是否有cell为nil的情况，一般情况下都是由此发生的">
-<meta property="og:updated_time" content="2016-03-10T05:32:43.000Z">
+<meta property="og:description" content="在ARC下保留dealloc的原因dealloc 方法中 我们不再被允许调用 [release] 了， 也不允许调用 [super dealloc]。 
+唯一一个留着 dealloc 方法的原因就是， 你需要释放一些不在 ARC 控制下的资源。 例如 Core     Foundation 对象中调用 CFRelease()， 对那些通过 malloc() 分配的内存调用 free(), 注销通">
+<meta property="og:updated_time" content="2016-03-10T06:31:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="failed to obtain a cell from its dataSource崩溃">
-<meta name="twitter:description" content="在开发过程中，遇到failed to obtain a cell from its dataSource 崩溃，解决思路是首先查看 cellForRowAtIndexPath 中是否有cell为nil的情况，一般情况下都是由此发生的">
+<meta name="twitter:title" content="ARC dealloc">
+<meta name="twitter:description" content="在ARC下保留dealloc的原因dealloc 方法中 我们不再被允许调用 [release] 了， 也不允许调用 [super dealloc]。 
+唯一一个留着 dealloc 方法的原因就是， 你需要释放一些不在 ARC 控制下的资源。 例如 Core     Foundation 对象中调用 CFRelease()， 对那些通过 malloc() 分配的内存调用 free(), 注销通">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,10 +63,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-failed-to-obtain-a-cell-from-its-dataSource崩溃" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-ARC-dealloc" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/10/failed-to-obtain-a-cell-from-its-dataSource崩溃/" class="article-date">
-  <time datetime="2016-03-10T05:30:01.000Z" itemprop="datePublished">2016-03-10</time>
+    <a href="/2016/03/10/ARC-dealloc/" class="article-date">
+  <time datetime="2016-03-10T06:29:32.000Z" itemprop="datePublished">2016-03-10</time>
 </a>
     
   </div>
@@ -74,7 +77,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      failed to obtain a cell from its dataSource崩溃
+      ARC dealloc
     </h1>
   
 
@@ -82,12 +85,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在开发过程中，遇到failed to obtain a cell from its dataSource 崩溃，解决思路是首先查看 cellForRowAtIndexPath 中是否有cell为nil的情况，一般情况下都是由此发生的</p>
+        <h3 id="在ARC下保留dealloc的原因">在ARC下保留dealloc的原因</h3><pre><code>dealloc 方法中 我们不再被允许调用 [release] 了， 也不允许调用 [super dealloc]。 
+唯一一个留着 dealloc 方法的原因就是， 你需要释放一些不在 ARC 控制下的资源。 例如 Core     Foundation 对象中调用 <span class="function"><span class="title">CFRelease</span><span class="params">()</span></span>， 对那些通过 <span class="function"><span class="title">malloc</span><span class="params">()</span></span> 分配的内存调用 <span class="function"><span class="title">free</span><span class="params">()</span></span>, 注销通    知，停止 Tiner， 等等。
+如果你是一个对象的代理的话，有时必须显式的断开和它的连接，但通常这都是自动的。 大部分情况下，代理都是弱引用， 当一个即将被释放的对象是其他对象的代理的话， 当这个对象被销毁时，代理指针将会被自动设置为 nil。 弱指针在这之后会被自动清楚。
+另外， 在你的 dealloc 方法中， 你仍然可以使用实例变量， 因为他们在这时候还没被释放掉。 在 dealloc 返回之前，都不会被释放。
+</code></pre><h3 id="dealloc函数中_super_dealloc_的使用时机">dealloc函数中 super dealloc 的使用时机</h3><pre><code>我们定义的全局变量都是在 <span class="tag">-</span> (void)<span class="tag">dealloc</span> 函数中释放的，里面继承了一个<span class="attr_selector">[super dealloc]</span>方法，
+有些同学平时自己释放内存都是写在 <span class="attr_selector">[super dealloc]</span>的后面，但是在<span class="tag">Objective</span>－<span class="tag">c</span> 中不能这样写,所有的释放都必须写在 <span class="attr_selector">[super dealloc]</span>的前面。
+
+<span class="tag">-------</span>错误的写法<span class="tag">--------</span>
+<span class="tag">-</span> (void)<span class="tag">dealloc</span>
+{
+    <span class="attr_selector">[super dealloc]</span>;
+    <span class="attr_selector">[XXX release]</span>;
+    ......
+}
+<span class="tag">-------</span>正确的写法<span class="tag">--------</span>
+<span class="tag">-</span> (void)<span class="tag">dealloc</span>
+{
+    <span class="attr_selector">[XXX release]</span>;
+    <span class="attr_selector">[super dealloc]</span>;
+    ......
+}
+</code></pre><p>原因是：“你所创建的每个类都是从父类，根类继承来的，有很多实例变量也会继承过来，这部分变量有时候会在你的程序内使用，它们不会自动释放内存，你需要调用父类的 dealloc方法来释放，然而在此之前你需要先把自己所写类中的变量内存先释放掉，否则就会造成你本类中的内存积压，造成泄漏”。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/10/failed-to-obtain-a-cell-from-its-dataSource崩溃/" data-id="cillwc5zo0007vix7i5vbnddj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/10/ARC-dealloc/" data-id="cillwc5yi0000vix7h4mkjndk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -98,19 +122,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/03/10/解除Main-Storyboard关联/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          解除Main.Storyboard关联
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/03/10/URL组成/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/03/10/webView重复加载webViewDidFinishLoad解决办法/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">URL组成</div>
+      <div class="article-nav-title">webView重复加载webViewDidFinishLoad解决办法</div>
     </a>
   
 </nav>
