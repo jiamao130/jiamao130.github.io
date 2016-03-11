@@ -61,6 +61,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-xcode模拟器不显示" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/11/xcode模拟器不显示/" class="article-date">
+  <time datetime="2016-03-11T01:09:21.000Z" itemprop="datePublished">2016-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/11/xcode模拟器不显示/">xcode模拟器不显示</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>重新安装xcode，发现模拟器不显示了</p>
+<p><img src="http://images.cnitblog.com/blog/129339/201411/241420459185610.jpg" alt="模拟器"></p>
+<p>各种折腾，重装SDK，重启xcode</p>
+<p>同时, 这种情况下, 你去单独运行模拟器, 会得到如下错误:”unable to determine device”, 这种错误, 在一切正常的情况下, 是开了多个模拟器. 在我们今天碰到的情况下, 是一个模拟器都没有!</p>
+<p>解决方法:</p>
+<ol>
+<li>打开Xcode -&gt; Open Developer Tool -&gt; iOS simulator(即使此时你是看不到模拟器的, 但程序其实 已经打开了,托盘图标和菜单就是证据)</li>
+<li><p>找到菜单Hardware -&gt; Device -&gt; Manage Devices</p>
+</li>
+<li><p>接下来添加模拟器就行了</p>
+</li>
+</ol>
+<p>到此,模拟器终于出现了, 真是纠结.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/11/xcode模拟器不显示/" data-id="ciln0eg670005m3x7p4ibnr3r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-ARC-dealloc" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/03/10/ARC-dealloc/" class="article-date">
@@ -83,8 +134,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="在ARC下保留dealloc的原因">在ARC下保留dealloc的原因</h3><pre><code>dealloc 方法中 我们不再被允许调用 [release] 了， 也不允许调用 [super dealloc]。 
-唯一一个留着 dealloc 方法的原因就是， 你需要释放一些不在 ARC 控制下的资源。 例如 Core     Foundation 对象中调用 <span class="function"><span class="title">CFRelease</span><span class="params">()</span></span>， 对那些通过 <span class="function"><span class="title">malloc</span><span class="params">()</span></span> 分配的内存调用 <span class="function"><span class="title">free</span><span class="params">()</span></span>, 注销通    知，停止 Tiner， 等等。
+        <h3 id="在ARC下保留dealloc的原因">在ARC下保留dealloc的原因</h3><pre><code>dealloc 方法中 我们不再被允许调用 [release] 了， 也不允许调用 [super dealloc]。 唯一一个留着 dealloc 方法的原因就是， 你需要释放一些不在 ARC 控制下的资源。 例如 Core Foundation 对象中调用 <span class="function"><span class="title">CFRelease</span><span class="params">()</span></span>， 对那些通过 <span class="function"><span class="title">malloc</span><span class="params">()</span></span> 分配的内存调用 <span class="function"><span class="title">free</span><span class="params">()</span></span>, 注销通知，停止 Timer， 等等。
 如果你是一个对象的代理的话，有时必须显式的断开和它的连接，但通常这都是自动的。 大部分情况下，代理都是弱引用， 当一个即将被释放的对象是其他对象的代理的话， 当这个对象被销毁时，代理指针将会被自动设置为 nil。 弱指针在这之后会被自动清楚。
 另外， 在你的 dealloc 方法中， 你仍然可以使用实例变量， 因为他们在这时候还没被释放掉。 在 dealloc 返回之前，都不会被释放。
 </code></pre><h3 id="dealloc函数中_super_dealloc_的使用时机">dealloc函数中 super dealloc 的使用时机</h3><pre><code>我们定义的全局变量都是在 <span class="tag">-</span> (void)<span class="tag">dealloc</span> 函数中释放的，里面继承了一个<span class="attr_selector">[super dealloc]</span>方法，
@@ -109,7 +159,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/10/ARC-dealloc/" data-id="cillwc5yi0000vix7h4mkjndk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/10/ARC-dealloc/" data-id="ciln0eg4s0000m3x7lqew6vsa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -164,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/10/webView重复加载webViewDidFinishLoad解决办法/" data-id="cillwc5zk0005vix70wco230v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/10/webView重复加载webViewDidFinishLoad解决办法/" data-id="ciln0eg6b0007m3x7xs27w3w7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -208,7 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/10/解除Main-Storyboard关联/" data-id="cillwc5zb0003vix72mibt9nb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/10/解除Main-Storyboard关联/" data-id="ciln0eg5y0003m3x7bpnt5448" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -247,7 +297,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/10/failed-to-obtain-a-cell-from-its-dataSource崩溃/" data-id="cillwc5zo0007vix7i5vbnddj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/10/failed-to-obtain-a-cell-from-its-dataSource崩溃/" data-id="ciln0eg6d0009m3x78zcshin8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -299,7 +349,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/10/URL组成/" data-id="cillwc5zt000bvix7jkcwyjcy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/10/URL组成/" data-id="ciln0eg6l000dm3x77g7481hl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/URL/">URL</a></li></ul>
@@ -346,7 +396,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/30/Xcode编译总是提示输入用户名密码问题解决办法/" data-id="cillwc5zq0009vix7spyrnf1w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/30/Xcode编译总是提示输入用户名密码问题解决办法/" data-id="ciln0eg6f000bm3x7dw0348qo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -386,7 +436,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/26/Xcode7网络请求失败解决办法/" data-id="cillwc5zr000avix7os04k5ge" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/26/Xcode7网络请求失败解决办法/" data-id="ciln0eg6i000cm3x7trhid5zl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -427,7 +477,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/24/Markdown语法简要规则/" data-id="cillwc5zv000evix72pu74mk9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/24/Markdown语法简要规则/" data-id="ciln0eg6n000gm3x73nhb0ljy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -469,7 +519,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/24/Hexo安装步骤以及使用中遇到的问题/" data-id="cillwc5zw000fvix71phmdcp4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/24/Hexo安装步骤以及使用中遇到的问题/" data-id="ciln0eg6p000hm3x7mng1et9c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -492,7 +542,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/URL/">URL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">4</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/URL/">URL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -510,7 +560,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -520,6 +570,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/03/11/xcode模拟器不显示/">xcode模拟器不显示</a>
+          </li>
         
           <li>
             <a href="/2016/03/10/ARC-dealloc/">ARC dealloc</a>
@@ -535,10 +589,6 @@
         
           <li>
             <a href="/2016/03/10/failed-to-obtain-a-cell-from-its-dataSource崩溃/">failed to obtain a cell from its dataSource崩溃</a>
-          </li>
-        
-          <li>
-            <a href="/2016/03/10/URL组成/">URL组成</a>
           </li>
         
       </ul>
