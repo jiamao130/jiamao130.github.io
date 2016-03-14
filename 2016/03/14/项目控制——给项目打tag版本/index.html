@@ -3,17 +3,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Git | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
+  <meta name="description" content="title: 项目控制——给项目打tag版本date: 2016-03-14 16:23:16
+tags: iOS给项目某个版本打tag值，以便将来能查看某个tag下的代码
+
+git tag -a 0.1.3 -m “Release version 0.1.3″详解：git tag 是命令
+-a 0.1.3是增加 名为0.1.3的标签
+-m 后面跟着的是标签的注释
+
+分享提交标签到远程服务器上gi">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/tags/Git/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/03/14/项目控制——给项目打tag版本/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description">
+<meta property="og:description" content="title: 项目控制——给项目打tag版本date: 2016-03-14 16:23:16
+tags: iOS给项目某个版本打tag值，以便将来能查看某个tag下的代码
+
+git tag -a 0.1.3 -m “Release version 0.1.3″详解：git tag 是命令
+-a 0.1.3是增加 名为0.1.3的标签
+-m 后面跟着的是标签的注释
+
+分享提交标签到远程服务器上gi">
+<meta property="og:updated_time" content="2016-03-14T08:28:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description">
+<meta name="twitter:description" content="title: 项目控制——给项目打tag版本date: 2016-03-14 16:23:16
+tags: iOS给项目某个版本打tag值，以便将来能查看某个tag下的代码
+
+git tag -a 0.1.3 -m “Release version 0.1.3″详解：git tag 是命令
+-a 0.1.3是增加 名为0.1.3的标签
+-m 后面跟着的是标签的注释
+
+分享提交标签到远程服务器上gi">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,39 +81,56 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/09/24/Hexo安装步骤以及使用中遇到的问题/" class="archive-article-date">
-  <time datetime="2015-09-24T07:06:04.000Z" itemprop="datePublished">Sep 24</time>
+        <section id="main"><article id="post-项目控制——给项目打tag版本" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/14/项目控制——给项目打tag版本/" class="article-date">
+  <time datetime="2016-03-14T08:28:42.000Z" itemprop="datePublished">2016-03-14</time>
 </a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/09/24/Hexo安装步骤以及使用中遇到的问题/">Hexo安装步骤以及使用中遇到的问题</a>
-    </h1>
-  
-
-    </header>
+    
   </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: 项目控制——给项目打tag版本<br>date: 2016-03-14 16:23:16</p>
+<h2 id="tags:_iOS">tags: iOS</h2><p>给项目某个版本打tag值，以便将来能查看某个tag下的代码</p>
+<ol>
+<li><p>git tag -a 0.1.3 -m “Release version 0.1.3″<br>详解：git tag 是命令</p>
+<pre><code>-a <span class="number">0.1</span><span class="number">.3</span>是增加 名为<span class="number">0.1</span><span class="number">.3</span>的标签
+-m 后面跟着的是标签的注释
+</code></pre><ol>
+<li>分享提交标签到远程服务器上<br>git push origin master<br>git push origin –tags<br>–tags参数表示提交所有tag至服务器端，普通的git push origin master操作不会推送标签到服务器端。</li>
+<li>删除标签的命令<br>git tag -d 0.1.3</li>
+<li>删除远端服务器的标签<br>git push origin :refs/tags/0.1.3</li>
+</ol>
+</li>
+</ol>
+<p>切换到tag历史记录会处在分离头指针状态，这个是的修改是很危险的，在切换回主线时如果没有合并，之前的修改提交基本都会丢失，如果需要修改可以尝试git checkout -b branch tag创建一个基于指定tag的分支，例如：git checkout -b tset v0.1.0  这个时候就会在分支上进行开发，之后可以切换到主线合并</p>
+<h3 id="PS:有个简便的办法，不使用命令行进行操作，使用souceTree,可以非常方便的打tag标签。">PS:有个简便的办法，不使用命令行进行操作，使用souceTree,可以非常方便的打tag标签。</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/14/项目控制——给项目打tag版本/" data-id="cilrqak240003mmx7l1akfcb0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/14/imageView自适应布局/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">imageView自适应布局</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
 </section>
         
           <aside id="sidebar">

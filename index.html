@@ -61,6 +61,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-项目控制——给项目打tag版本" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/14/项目控制——给项目打tag版本/" class="article-date">
+  <time datetime="2016-03-14T08:28:42.000Z" itemprop="datePublished">2016-03-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: 项目控制——给项目打tag版本<br>date: 2016-03-14 16:23:16</p>
+<h2 id="tags:_iOS">tags: iOS</h2><p>给项目某个版本打tag值，以便将来能查看某个tag下的代码</p>
+<ol>
+<li><p>git tag -a 0.1.3 -m “Release version 0.1.3″<br>详解：git tag 是命令</p>
+<pre><code>-a <span class="number">0.1</span><span class="number">.3</span>是增加 名为<span class="number">0.1</span><span class="number">.3</span>的标签
+-m 后面跟着的是标签的注释
+</code></pre><ol>
+<li>分享提交标签到远程服务器上<br>git push origin master<br>git push origin –tags<br>–tags参数表示提交所有tag至服务器端，普通的git push origin master操作不会推送标签到服务器端。</li>
+<li>删除标签的命令<br>git tag -d 0.1.3</li>
+<li>删除远端服务器的标签<br>git push origin :refs/tags/0.1.3</li>
+</ol>
+</li>
+</ol>
+<p>切换到tag历史记录会处在分离头指针状态，这个是的修改是很危险的，在切换回主线时如果没有合并，之前的修改提交基本都会丢失，如果需要修改可以尝试git checkout -b branch tag创建一个基于指定tag的分支，例如：git checkout -b tset v0.1.0  这个时候就会在分支上进行开发，之后可以切换到主线合并</p>
+<h3 id="PS:有个简便的办法，不使用命令行进行操作，使用souceTree,可以非常方便的打tag标签。">PS:有个简便的办法，不使用命令行进行操作，使用souceTree,可以非常方便的打tag标签。</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/14/项目控制——给项目打tag版本/" data-id="cilrqak240003mmx7l1akfcb0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-imageView自适应布局" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/03/14/imageView自适应布局/" class="article-date">
@@ -90,7 +130,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/14/imageView自适应布局/" data-id="cilrfvft90009vox728ti4k3l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/14/imageView自适应布局/" data-id="cilrqak2n000ammx7fzgoqu9l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -139,7 +179,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/11/xcode模拟器不显示/" data-id="cilrfvft50005vox7wef6a46d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/11/xcode模拟器不显示/" data-id="cilrqak2j0006mmx7ht8avhvb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -198,7 +238,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/10/ARC-dealloc/" data-id="cilrfvfs30000vox77tnmfwor" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/10/ARC-dealloc/" data-id="cilrqak120000mmx7dq982v5n" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -253,7 +293,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/10/webView重复加载webViewDidFinishLoad解决办法/" data-id="cilrfvft70007vox7kew5s41z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/10/webView重复加载webViewDidFinishLoad解决办法/" data-id="cilrqak2l0008mmx7tz3fcyim" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -297,7 +337,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/10/解除Main-Storyboard关联/" data-id="cilrfvfss0003vox7hhkgk4c9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/10/解除Main-Storyboard关联/" data-id="cilrqak2e0004mmx7lkx6ljb1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -336,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/10/failed-to-obtain-a-cell-from-its-dataSource崩溃/" data-id="cilrfvftb000avox7xgkswcl2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/10/failed-to-obtain-a-cell-from-its-dataSource崩溃/" data-id="cilrqak2q000bmmx7u6q0ni2z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -388,7 +428,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/10/URL组成/" data-id="cilrfvftk000evox7wr5pjnn5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/10/URL组成/" data-id="cilrqak2x000fmmx73fszddq1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/URL/">URL</a></li></ul>
@@ -435,7 +475,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/30/Xcode编译总是提示输入用户名密码问题解决办法/" data-id="cilrfvftf000cvox7r27wjv4w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/30/Xcode编译总是提示输入用户名密码问题解决办法/" data-id="cilrqak2t000dmmx77l1ppdsq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -475,48 +515,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/26/Xcode7网络请求失败解决办法/" data-id="cilrfvfth000dvox7y7pzqzqm" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Markdown语法简要规则" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/09/24/Markdown语法简要规则/" class="article-date">
-  <time datetime="2015-09-24T08:03:25.000Z" itemprop="datePublished">2015-09-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/24/Markdown语法简要规则/">Markdown语法简要规则</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天意外看到了一个很好用的编辑器 <strong><em>Markdown</em></strong>，对爱写blog的同学来说，简直就是神器,下面介绍一下Markdown的简要语法，相信看到的同学会非常震惊，用如此简单的语法可以写出与Html相媲美的文章。</p>
-        
-          <p class="article-more-link">
-            <a href="/2015/09/24/Markdown语法简要规则/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/24/Markdown语法简要规则/" data-id="cilrfvfto000hvox7wvx3twpo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/26/Xcode7网络请求失败解决办法/" data-id="cilrqak2v000emmx7m71uj2j0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -559,7 +558,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -569,6 +568,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/03/14/项目控制——给项目打tag版本/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2016/03/14/imageView自适应布局/">imageView自适应布局</a>
@@ -584,10 +587,6 @@
         
           <li>
             <a href="/2016/03/10/webView重复加载webViewDidFinishLoad解决办法/">webView重复加载webViewDidFinishLoad解决办法</a>
-          </li>
-        
-          <li>
-            <a href="/2016/03/10/解除Main-Storyboard关联/">解除Main.Storyboard关联</a>
           </li>
         
       </ul>
