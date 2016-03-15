@@ -61,6 +61,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Xcode7网络请求失败解决办法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/09/26/Xcode7网络请求失败解决办法/" class="article-date">
+  <time datetime="2015-09-26T03:58:35.000Z" itemprop="datePublished">2015-09-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/26/Xcode7网络请求失败解决办法/">Xcode7网络请求失败解决办法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##升级Xcode7发现网络访问失败解决办法</p>
+<p>升级Xcode7之后，发现网络访问有问题，下载不了图片了，经过google查证，iOS9引入了新的特性App Transport Security,这种新特性要求App内访问的网络必须使用Https协议，但目前好多都是使用的Http传输</p>
+<p>最终找到以下解决办法：<br>1 在info.plist中添加<strong><em>NSAppTransportSecurity</em></strong>类型为NSDictionary</p>
+<p>2 在NSAppTransportSecurity下添加<strong><em>NSAllowsArbitraryLoads</em></strong>类型为Boolean,为YES</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/09/26/Xcode7网络请求失败解决办法/" data-id="cilsxdqmo000g5tx7c9zixyqc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Markdown语法简要规则" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/09/24/Markdown语法简要规则/" class="article-date">
@@ -92,7 +132,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/24/Markdown语法简要规则/" data-id="cilrqak33000immx7yuzmij99" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/24/Markdown语法简要规则/" data-id="cilsxdqmy000k5tx7he3aeevj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -134,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/24/Hexo安装步骤以及使用中遇到的问题/" data-id="cilrqak36000jmmx7ycpb2h8h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/09/24/Hexo安装步骤以及使用中遇到的问题/" data-id="cilsxdqn2000l5tx7miuaexuo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -161,7 +201,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/URL/">URL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">5</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/URL/">URL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -179,7 +219,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -189,6 +229,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/03/15/程序启动后状态栏字体变大解决办法/">程序启动后状态栏字体变大解决办法</a>
+          </li>
         
           <li>
             <a href="/2016/03/14/项目控制——给项目打tag版本/">(no title)</a>
@@ -204,10 +248,6 @@
         
           <li>
             <a href="/2016/03/10/ARC-dealloc/">ARC dealloc</a>
-          </li>
-        
-          <li>
-            <a href="/2016/03/10/webView重复加载webViewDidFinishLoad解决办法/">webView重复加载webViewDidFinishLoad解决办法</a>
           </li>
         
       </ul>
