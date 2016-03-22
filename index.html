@@ -61,10 +61,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-adfdfd" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-获取视频的旋转角度及宽高" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/18/adfdfd/" class="article-date">
-  <time datetime="2016-03-18T09:32:13.000Z" itemprop="datePublished">2016-03-18</time>
+    <a href="/2016/03/22/获取视频的旋转角度及宽高/" class="article-date">
+  <time datetime="2016-03-22T06:25:59.000Z" itemprop="datePublished">2016-03-22</time>
 </a>
     
   </div>
@@ -75,7 +75,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/18/adfdfd/">adfdfd</a>
+      <a class="article-title" href="/2016/03/22/获取视频的旋转角度及宽高/">获取视频的旋转角度及宽高</a>
     </h1>
   
 
@@ -83,15 +83,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>sljflsdjfsldkfjslkfjslkfjslkdfjlsdfjlsdfjsldfjsldfjsld</p>
+        <p>获取视频的旋转角度及宽高的解决办法：</p>
+<pre><code><span class="built_in">AVAsset</span> *asset = [<span class="built_in">AVAsset</span> assetWithURL:[<span class="built_in">NSURL</span> URLWithString:model<span class="variable">.media_url</span>]];
+<span class="built_in">NSArray</span> *tracks = [asset tracksWithMediaType:<span class="built_in">AVMediaTypeVideo</span>];
+<span class="keyword">if</span>([tracks count] &gt; <span class="number">0</span>) {
+    <span class="built_in">AVAssetTrack</span> *videoTrack = [tracks objectAtIndex:<span class="number">0</span>];
+    <span class="built_in">CGAffineTransform</span> t = videoTrack<span class="variable">.preferredTransform</span>;<span class="comment">//这里的矩阵有旋转角度，转换一下即可</span>
+    <span class="built_in">NSLog</span>(<span class="string">@"=====hello  width:%f===height:%f"</span>,videoTrack<span class="variable">.naturalSize</span><span class="variable">.width</span>,videoTrack<span class="variable">.naturalSize</span><span class="variable">.height</span>);<span class="comment">//宽高</span>
+}
+</code></pre><p> 由此解决视频的横竖屏播放问题</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/18/adfdfd/" data-id="cilxid834000fz8x7h4glb6aa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/22/获取视频的旋转角度及宽高/" data-id="cim31h5h800063ax7dvhkxouu" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-Markdown/">iOS Markdown</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
 
     </footer>
   </div>
@@ -129,7 +137,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/15/程序启动后状态栏字体变大解决办法/" data-id="cilxid82v0006z8x7b3heolw2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/15/程序启动后状态栏字体变大解决办法/" data-id="cim31h5ha00083ax75mdumv1b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -171,7 +179,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/14/项目控制——给项目打tag版本/" data-id="cilxid82k0003z8x786romly1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/14/项目控制——给项目打tag版本/" data-id="cim31h5g900033ax7t27fvwul" class="article-share-link">Share</a>
       
       
     </footer>
@@ -210,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/14/imageView自适应布局/" data-id="cilxid831000cz8x7gm2heiuh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/14/imageView自适应布局/" data-id="cim31h5hh000e3ax7j85h7wrh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -259,7 +267,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/11/xcode模拟器不显示/" data-id="cilxid82x0008z8x7xvnqwmln" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/11/xcode模拟器不显示/" data-id="cim31h5hc000a3ax7gdkm8rcl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -318,7 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/10/ARC-dealloc/" data-id="cilxid81q0000z8x76ut3ka3v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/10/ARC-dealloc/" data-id="cim31h5f400003ax7pejj6cow" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -373,7 +381,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/10/webView重复加载webViewDidFinishLoad解决办法/" data-id="cilxid82z000az8x7p1wucd9j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/10/webView重复加载webViewDidFinishLoad解决办法/" data-id="cim31h5hf000c3ax75fmeioyb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -417,7 +425,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/10/解除Main-Storyboard关联/" data-id="cilxid82n0004z8x7k6lmhes4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/10/解除Main-Storyboard关联/" data-id="cim31h5gz00043ax7t4jmfxp6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -456,7 +464,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/10/failed-to-obtain-a-cell-from-its-dataSource崩溃/" data-id="cilxid832000dz8x7x1qimyk9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/10/failed-to-obtain-a-cell-from-its-dataSource崩溃/" data-id="cim31h5hk000f3ax7ji3ii3e8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
@@ -508,7 +516,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/10/URL组成/" data-id="cilxid83f000kz8x76c6ibc0c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/10/URL组成/" data-id="cim31h5hv000j3ax7f9xvqnxu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/URL/">URL</a></li></ul>
@@ -535,7 +543,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/URL/">URL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS-Markdown/">iOS Markdown</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/URL/">URL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -544,7 +552,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/iOS-Markdown/" style="font-size: 10px;">iOS Markdown</a>
+      <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a>
     </div>
   </div>
 
@@ -565,7 +573,7 @@
       <ul>
         
           <li>
-            <a href="/2016/03/18/adfdfd/">adfdfd</a>
+            <a href="/2016/03/22/获取视频的旋转角度及宽高/">获取视频的旋转角度及宽高</a>
           </li>
         
           <li>
